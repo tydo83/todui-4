@@ -40,5 +40,21 @@ So marking complete is nice, but let's actually give them a chance to toggle stu
 The simplest way to solve this problem is with a good ol' `if/else` block. If the `todo` is complete, change its `isComplete` to `false`; if it's not, change it to `true`.
 
   Alternately, if you want to use a ternary here, that's a bit cleaner! Just make sure, as always with ternaries, that you're using what the ternary evaluates to, and not putting something like `todo.isComplete =` twice. Ternaries are not for "side effects", but just for getting one value based on a boolean. [A really good article on how to use ternaries effectively.](https://blog.webdevsimplified.com/2020-05/ternary-operator/)
+  
+  Alternately, you can simply use `!` (the bang operator) on the old value of `todo.isComplete` to make a `true` into a `false` and vice versa. Cleanest solution possible!
 
-  You'll know you've got it when you can toggle a todo's completion status back and forth!
+  Any way you do it, you'll know you've got it when you can toggle a todo's completion status back and forth!
+  
+  
+### Toggling Priority
+
+Really the same thing, except priority is a number instead of a boolean. If the priority is `1`, set it to `2`, and vice versa!
+
+But we DO have to first:
+
+1. Add priorities to our todo-printing loops, so that it looks something like this:
+
+  [picture of a full list of todos with priorities printed just before completion marks](./assets/todos-with-priorities.png)
+2. Wire it all together, with an option in our menu that ask the user which todo to toggle, and an `interface.question` call that gives `node` a function to call when the user enters their todo's number.
+
+
