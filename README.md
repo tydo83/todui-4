@@ -48,7 +48,7 @@ The simplest way to solve this problem is with a good ol' `if/else` block. If th
   
 ### Toggling Priority
 
-Really the same thing, except priority is a number instead of a boolean. If the priority is `1`, set it to `2`, and vice versa!
+Really the same thing as the aboe step, except priority is a number instead of a boolean. If the priority is `1`, set it to `2`, and vice versa!
 
 But we DO have to first:
 
@@ -59,3 +59,16 @@ But we DO have to first:
 2. Wire it all together, with an option in our menu that ask the user which todo to toggle, and an `interface.question` call that gives `node` a function to call when the user enters their todo's number.
 
 
+### Removing Completed
+
+This one's a filter operation, cutting down our todos to just those that aren't complete yet. Remember `filter`? Yeah, you remember them.
+
+* Wire it up! We don't need to ask a followup question for once, just run a function if their menu input is `3`. We don't need to know what their new todo is called, or remove/toggle an existing one... as soon as they select 3, we have all the info we need. So just make a new function (so that our code isn't right in the middle of our menu-handling function), and call it.
+* Now! We're not doing any `return`ing in this code, and we'll keep to that paradigm. Instead, we're going to _reassign_ our `todos` array to be a filtered version of itself. This means going up to where we made our `todos` variable and changing its assignment from `const` to `let`.
+* Now that that's set up, we can reassign `todos` to be the result of calling `todos.filter` and passing it a function (inline and arrow if you wanna push yourself!) that returns true if the given todo is not complete). That's a lot in one bullet point, but... you can do it!
+* If `.filter` is a little busy for your current syntax skills, you could always make a new empty array, loop through `todos`, and only `.push` into the new array if the current todo is incomplete. Then reassign `todos` to be that now-no-longer-empty array. Manual is always good anyway for reminding us how `.filter` works!
+
+
+### Stretch Goals
+
+Coming soon!
