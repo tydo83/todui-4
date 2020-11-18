@@ -48,7 +48,7 @@ The simplest way to solve this problem is with a good ol' `if/else` block. If th
   
 ### Toggling Priority
 
-Really the same thing as the aboe step, except priority is a number instead of a boolean. If the priority is `1`, set it to `2`, and vice versa!
+Really the same thing as the above step, except priority is a number instead of a boolean. If the priority is `1`, set it to `2`, and vice versa!
 
 But we DO have to first:
 
