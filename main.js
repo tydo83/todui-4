@@ -1,3 +1,4 @@
+const { toUnicode } = require('punycode');
 const readline = require('readline');
 const data = require('./data.js')
 
@@ -33,7 +34,7 @@ const displayTodos = function() {
   for (let i = 0; i < todos.length; i++) {
     const todo = todos[i];
     const num = i + 1;
-    console.log(num + '. ' + todo.text);
+    console.log(`${num}. ${todo.text} - priority: ${todo.priority} - ${todo.isComplete ? COMPLETE_MARK : INCOMPLETE_MARK}`);
   }
 }
 
@@ -70,6 +71,24 @@ const remove = function(num) {
   displayTodos();
   displayMenu();
 }
+
+const toggleComplete = (num) => {
+  todos[num - 1].isComplete = (todos[num - 1].isComplete) ? false : true;
+  displayTodos();
+  displayMenu();
+}
+
+const togglePriority = (num) => {
+  todos[num - 1].priority = (todos[num - 1].priority == 1) ? 2 : 1;
+  displayTodos();
+  displayMenu();
+}
+
+const removeCompletedTodos = () => {
+  todos = todos.filter((todo) => {return !todo.isComplete})
+  displayTodos(); 
+  displayMenu();
+} 
 
 const handleMenu = function(cmd) {
   if (cmd === '1') {
