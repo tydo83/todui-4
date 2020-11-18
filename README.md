@@ -54,7 +54,8 @@ But we DO have to first:
 
 1. Add priorities to our todo-printing loops, so that it looks something like this:
 
-  [picture of a full list of todos with priorities printed just before completion marks](./assets/todos-with-priorities.png)
+  ![picture of a full list of todos with priorities printed just before completion marks](./assets/todos-with-priorities.png)
+
 2. Wire it all together, with an option in our menu that ask the user which todo to toggle, and an `interface.question` call that gives `node` a function to call when the user enters their todo's number.
 
 
