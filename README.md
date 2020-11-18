@@ -71,4 +71,14 @@ This one's a filter operation, cutting down our todos to just those that aren't 
 
 ### Stretch Goals
 
-Coming soon!
+Stretch Goals
+Filtering By Priority
+This is a tough one, because while it might SEEM like removing completed todos--filtering out the ones that are priority 1 or priority 2--we don't want to actually delete them from our todos array. The user just wants to see one or the other. This is WAY tougher than filtering and reassigning!
+
+So!
+
+We'll want to give the user menu options to show all priorities, priority 1 only, and priority 2 only. (If you wanna get fancy, only show them the options for the view we're NOT curently in.)
+
+How do we tell which view we're currently in? The best way to handle this is to have a global variable for which todos we're showing. Make it 1 when we're showing that priority, 2 when we're showing the other priority, and ....maybe it should be 0 when we're showing them all?
+
+Then we want to check that value whenever we display our todos, and make a new filtered array from our todos, printing only those. (Or, alternately, just only print in our current loop if the current todo matches our priority view criterion.)
